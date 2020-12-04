@@ -12,7 +12,7 @@ class Collection extends Component {
       sections: [
         {
           title: 'hats',
-          imageUrl: 'https://i.ibb.co/VHSxX9Q/hats.jpg',
+          imageUrl: 'https://i.ibb.co/RNWvFkM/hats2.jpg',
           id: 1,
           linkUrl: 'shop/hats',
         },
@@ -49,8 +49,8 @@ class Collection extends Component {
   render() {
     return (
       <div className='collection-menu'>
-        {this.state.sections.map(({ title, imageUrl, id, size }) => (
-          <MenuItem key={id} title={title} imageUrl={imageUrl} size={size} />
+        {this.state.sections.map(({ id, ...otherSectionProps }) => (
+          <MenuItem key={id} {...otherSectionProps} />
         ))}
       </div>
     )
